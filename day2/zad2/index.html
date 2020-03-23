@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: fixed;
+        }
+
+        body {
+            height: 10000vh;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    const strip = document.createElement('div');
+    document.body.appendChild(strip);
+
+    let size = 10;
+    grow = true;
+    strip.style.width = "100vw";
+    strip.style.height = size + "px";
+    strip.style.backgroundColor = "green";
+
+    window.addEventListener("scroll", function () {
+        if (size > window.innerHeight / 2) {
+            grow = !grow;
+        } else if (size == 0) {
+            grow = !grow;
+        }
+
+        if (grow) {
+            size += 5;
+            strip.style.height = size + "px";
+            strip.style.backgroundColor = "green";
+
+        } else {
+            size -= 5;
+            strip.style.height = size + "px";
+            strip.style.backgroundColor = "red";
+        }
+    })
+</script>
+
+</html>

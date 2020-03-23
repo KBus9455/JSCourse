@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 10000vh;
+        }
+
+        div {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+</body>
+<script>
+    const square = document.createElement("div");
+    document.body.appendChild(square);
+    let grow = true; //DEKLARACJA FLAGI
+
+    let size = 10; // wielkość kwadratu
+    square.style.width = size + "px";
+    square.style.height = size + "px";
+
+    window.addEventListener("scroll", function () {
+        if (size >= window.innerHeight / 2) {
+            grow = !grow;
+        } else if (size <= 0) {
+            grow = !grow;
+        }
+        if (grow) { // jest już sprawdzone u góry i nie trzeba dodatkowo dodawaćwarunku
+            size += 5;
+            square.style.width = size + "px";
+            square.style.height = size + "px";
+        } else {
+            size -= 5;
+            square.style.width = size + "px";
+            square.style.height = size + "px";
+        }
+    })
+</script>
+
+</html>

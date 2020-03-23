@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 10px
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+        }
+
+        ul {
+            font-size: 20px;
+            list-style: inside;
+
+        }
+
+        .big {
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button>Utwórz element</button>
+    <ul>
+
+
+    </ul>
+</body>
+
+<script>
+    let number = 1;
+
+    const btn = document.querySelector("button");
+    const addElement = function () {
+        console.log("działa");
+        const point = document.createElement('li');
+        document.querySelector('ul').appendChild(point);
+        point.textContent = number;
+
+        if (number % 3 == 0) {
+            point.classList.add("big");
+        }
+        number = number + 2; //+=2
+    }
+
+    btn.addEventListener("click", addElement);
+</script>
+
+</html>
